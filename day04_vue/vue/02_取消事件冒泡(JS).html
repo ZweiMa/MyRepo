@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f() {
+            alert("点击了大盒子");
+        }
+        function f1() {
+            alert("点击了小盒子");
+            event.stopPropagation()
+        }
+    </script>
+</head>
+<body>
+    <div style="border: 1px solid red;width: 500px;height: 500px" onclick="f()">
+        <div style="border: 1px solid blue;width: 200px;height: 200px" onclick="f1()"></div>
+    </div>
+</body>
+</html>

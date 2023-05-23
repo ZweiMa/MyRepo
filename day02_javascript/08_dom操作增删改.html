@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            document.getElementById("btn01").onclick=function () {
+
+                //新建一个元素对象
+               /* var li = document.createElement("li");//<li></li>
+                //li.innerText="西安";
+                var text = document.createTextNode("西安123");
+                li.appendChild(text)
+
+                var ul = document.getElementById("ul");
+                var sz = document.getElementById("sz");*/
+                //ul.insertBefore(li,sz);
+                //ul.appendChild(li);
+                //ul.replaceChild(li,sz);
+
+                var sz = document.getElementById("ul");
+                sz.remove();
+
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="ul">
+        <li>北京</li>
+        <li>上海</li>
+        <li id="sz">深圳</li>
+        <li>武汉</li>
+    </ul>
+    <input type="button" value="点我" id="btn01">
+</body>
+</html>

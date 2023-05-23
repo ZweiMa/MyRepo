@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function func() {
+        alert("事件被触发了！")
+        }
+
+        window.onload=function(){
+        var ele = document.getElementById("username")
+        ele.onchange=function(){
+        alert("事件又一次被触发了！")
+        }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="按钮" onclick="func()" >
+<input type="text"id="username">
+</body>
+</html>

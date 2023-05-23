@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+    window.onload=function(){
+    var ele = document.getElementById("btn01")
+    ele.onclick=function(){
+        fun01();
+    };
+    };
+    var result = confirm("老板，你真的不加个钟吗？");
+    if(result) {
+    console.log("老板点了确定，表示要加钟");
+    }else{
+    console.log("老板点了确定，表示不加钟");
+    }
+    function fun01(){
+        alert("fun01函数");
+    }
+
+
+        var fun02 = function(){
+        alert("这是一个匿名函数");
+    }
+
+    </script>
+</head>
+<body>
+<form>
+    <input type="button" value="点我" id="btn01"/>
+</form>
+</body>
+</html>

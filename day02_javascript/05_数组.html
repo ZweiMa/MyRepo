@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        window.onload=function () {
+            var ele=document.getElementById("btn01");
+            ele.onclick=function () {
+               //1. 创建数组
+                var arr=new Array();
+                //2. 存值
+                arr[0]=10;
+                arr[1]=20.5;
+                arr[2]="java";
+                arr[3]=true;
+                arr.push("python");
+                arr.push(100);
+
+                arr[10]="mysql";
+                //3. 取值
+                for(var i=0;i<arr.length;i++){
+                    console.log(arr[i]);
+                }
+                console.log(arr[100]+"---------------------");
+
+                //通过[]创建数组
+                var arrs=[10,"java","mysql",false,1.5];
+                arrs.reverse();
+                arrs.splice(2,2)
+                for(var i=0;i<arrs.length;i++){
+                    console.log(arrs[i]);
+                }
+
+                var s = arrs.join("-");
+                console.log(s)
+
+            }
+        }
+    </script>
+</head>
+<body>
+<form>
+    <input type="button" value="点我" id="btn01"/>
+</form>
+</body>
+</html>

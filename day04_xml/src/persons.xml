@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persons>
+    <abc age="30" gender="男" address="北京">
+        <id>102</id>
+        <name>rose</name>
+    </abc>
+    <abc age="20">
+        <id>101</id>
+        <name>jack</name>
+    </abc>
+    <abc age="25">
+        <id>103</id>
+        <name>tom</name>
+    </abc>
+    <person>
+        <id>202</id>
+        <name>张三</name>
+    </person>
+    <person>
+        <id>203</id>
+        <name>李四</name>
+    </person>
+    <name>单独的</name>
+
+</persons>

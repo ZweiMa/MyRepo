@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+    <div v-if="flag">这是div1</div>
+    <div v-else="flag">这是div2</div>
+    <input type="button" value="按钮" @click="fun">
+    </div>
+
+        <script>
+          new Vue({
+            "el":"#app",
+            "data": {
+              "msg":  "Hello World",
+              "flag": true
+          },
+            "methods": {
+                "fun":function(){
+                 this.flag=false;
+                 }
+            }
+        })
+        </script>
+</body>
+</html>

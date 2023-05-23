@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        this.alert("2000");
+
+        window.onload=function () {
+            var ele=document.getElementById("btn01");
+            ele.onclick=function () {
+               /*//1. 创建对象
+                var obj=new Object();
+                //2. 指定属性和属性值
+                obj.id=1001;
+                obj.name="tom";
+                obj.age=20;
+                //3. 指定函数
+                obj.eat=function (a,b) {
+                    alert(this.name+"在吃饭"+a+b);
+                }
+                obj.run=function () {
+                    alert(this.name+"在锻炼");
+                }
+
+                //4. 访问属性值
+                alert(obj.id);
+                alert(obj.name);
+                alert(obj.age);
+                alert(obj.gender);
+
+                obj.eat(1,2);*/
+
+
+               //采用{}创建对象
+                var obj={
+                    id:1002,
+                    name:"jack",
+                    age:20,
+                    eat:function () {
+                        alert(this.name+"吃饭");
+                    },
+                    run:function () {
+                        alert("跑步");
+                    }
+                }
+
+                alert(obj.id);
+                alert(obj.name);
+                alert(obj.age);
+                alert(obj.gender);
+
+                obj.eat(1,2);
+
+            }
+        }
+    </script>
+</head>
+<body>
+<form>
+    <input type="button" value="点我" id="btn01"/>
+</form>
+</body>
+</html>

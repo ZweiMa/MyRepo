@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        window.onload=function () {
+            var ele=document.getElementById("btn01");
+            ele.onclick=function () {
+                //1. 简单的json对象
+                var obj1={"id":1001,"name":"张三","age":20,"address":"北京"};
+                console.log(obj1.id);
+                console.log(obj1.name);
+                console.log(obj1.age);
+                console.log(obj1.address);
+                //2. 简单的json数组
+                var arr1=["java",10,20.8,true];
+                //3. 复杂的json对象
+                /*
+                * class Person{
+                *   private int id;
+                *   private String name;
+                *   private int age;
+                *   private Computer computer;
+                *
+                * }
+                *
+                * class Computer{
+                *      private int id;
+                *       private String brand;
+                *       private String color;
+                * }
+                *
+                *
+                *
+                *
+                * */
+                var obj2={
+                    "id":1001,
+                    "name":"张三",
+                    "age":20,
+                    "address":"北京",
+                    "computer":{
+                        "id":"2345",
+                        "brand":"外星人",
+                        "color":"白色"
+                    }
+                }
+
+                console.log("-----------------------")
+                console.log(obj2.name);
+                console.log(obj2.computer.id);
+                console.log(obj2.computer.brand);
+                console.log(obj2.computer.color);
+
+                // 4. 复杂json对象2
+                var obj3={
+                    "id":1001,
+                    "name":"张三",
+                    "age":20,
+                    "hobby":["java","mysql","oracle","python"]
+                }
+                console.log("-----------------------")
+                console.log(obj3.name);
+                for(var i=0;i<obj3.hobby.length;i++){
+                    console.log(obj3.hobby[i])
+                }
+
+                //5. 复杂json数组
+                var arr2=[
+                    {"id":1001,"name":"张三","age":20},
+                    {"id":1002,"name":"李四","age":21},
+                    {"id":1003,"name":"王五","age":22}
+                ];
+                console.log("-----------------------")
+                for(var i=0;i<arr2.length;i++){
+                    console.log(arr2[i].id+" "+arr2[i].name+" "+arr2[i].age);
+                }
+
+                //6. 数组和对象的再次结合
+                var obj4={
+                    "id":1001,
+                    "name":"张三丰",
+                    "age":20,
+                    "computers":[
+                        {"id":"111","brand":"外星人1","color":"白色"},
+                        {"id":"222","brand":"外星人2","color":"白色"},
+                        {"id":"333","brand":"外星人3","color":"白色"}
+                    ]
+                }
+                console.log("-----------------------")
+                console.log(obj4.name);
+                for(var i=0;i<obj4.computers.length;i++){
+                    console.log(obj4.computers[i].id+" "+obj4.computers[i].brand+" "+obj4.computers[i].color)
+                }
+
+                //创建一个json字符串
+                var str="{\"id\":1001,\"name\":\"张三\",\"age\":20,\"address\":\"北京\"}";
+                console.log(typeof str);//string
+                console.log(str);
+                console.log(str.id);
+                console.log("-----------------------------------")
+                //string->json对象
+                var parse = JSON.parse(str);
+                console.log(typeof parse);
+                console.log(parse);
+                console.log(parse.id);
+
+                var s = JSON.stringify(parse);
+                console.log(typeof s);
+                console.log(s);
+                console.log(s.id);
+
+
+
+
+
+
+
+            }
+        }
+    </script>
+</head>
+<body>
+<form>
+    <input type="button" value="点我" id="btn01"/>
+</form>
+</body>
+</html>

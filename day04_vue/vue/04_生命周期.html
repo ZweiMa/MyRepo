@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p id="p1">用户名：{{username}}</p>
+</div>
+<script>
+    new Vue({
+        "el":"#app",
+        "data":{
+        "username":"这是默认值"
+        },
+        "methods":{
+        fun(){
+        console.log("fun函数")
+        }
+        },
+        "beforeCreate":function () {
+        console.log("这是创建前："+this.username);
+        this.fun();
+        },
+        "created":function () {
+        console.log("这是创建后："+this.username);
+        this.fun();
+        },
+        "beforeMount":function () {
+        var innerText = document.getElementById("p1").innerText;
+        console.log("这是p标签内容："+innerText)
+        },
+        "mounted":function () {
+        var innerText = document.getElementById("p1").innerText;
+        console.log("这是p标签内容："+innerText)
+        }
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="abc in names">{{abc}}</li>
+        </ul>
+        <input type="button" value="button" @click="addName">
+
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+            </tr>
+            <tr v-for="(user,index) in users">
+                <td>{{index+1}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+            </tr>
+        </table>
+
+    </div>
+
+        <script>
+          new Vue({
+          "el": "#app",
+          "data": {
+          "names":["java","mysql","hadoop","flink"],
+          "users":[
+              {
+                  "id":"101",
+                  "name":"jack",
+                  "age":"20"
+              },{
+                  "id":"254",
+                  "name":"tom",
+                  "age":"21"
+              },{
+                  "id":"567",
+                  "name":"rose",
+                  "age":"22"
+              }
+          ],
+
+          "methods":{
+            "addName": function(){
+                this.names.push("spark")
+             }
+          }
+
+          }
+        })
+        </script>
+</body>
+</html>

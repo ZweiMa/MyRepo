@@ -1,0 +1,65 @@
+1. 事件绑定
+    1.1 取消控件的默认行为
+        表单
+            点击提交按钮的时候，如果有事件绑定，先触发js事件，提交表单
+        超链接
+            点击超链接的时候，如果有事件绑定，先触发js事件，进行跳转
+        js方式：event.preventDefault();
+        vue方式: @submit.prevent="f"   100%取消
+    1.2 取消事件冒泡
+        大模块，嵌套小模块，点击小模块时也相当于点击了大模块，如果都有点击事件，都会触发
+        取消事件冒泡，就是点击小模块的时候，不触发大模块的点击事件
+        js方式：event.stopPropagation()
+        vue的方式：@click.stop="f1" 100%取消
+2. 属性的侦听(监听)
+    功能：监听属性(数据模型)值的改变
+    在el/data/methods后添加一个watch:{属性的监听函数}
+    案例：
+        "watch":{
+            "username":function () {
+                console.log("username的值被改变了:"+this.username)
+            }
+        }
+       当username的值被用户改变的话，会自动触发该函数
+3. vue的生命周期
+    3.1 创建前后
+    3.2 挂载(渲染)前后
+    3.3 修改前后
+    3.4 销毁前后
+
+    钩子函数:捕获生命周期的状态
+        位置：和el/data/methods/watch同级别：
+        代码：
+            "beforeCreate":function () {
+                console.log("这是创建前："+this.username);
+                this.fun();
+            },
+            "created":function () {
+                console.log("这是创建后："+this.username);
+                this.fun();
+            },
+            "beforeMount":function () {
+                var innerText = document.getElementById("p1").innerText;
+                console.log("这是p标签内容："+innerText)
+            },
+            "mounted":function () {
+                var innerText = document.getElementById("p1").innerText;
+                console.log("这是p标签内容："+innerText)
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

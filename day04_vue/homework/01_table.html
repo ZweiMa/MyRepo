@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <table border="1" width="500px">
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>专业</th>
+                <th>操作</th>
+            </tr>
+            <tr v-for="(user,index) in users" >
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.subject}}</td>
+                <td><input type="button" value="删除" @click="deleteUser(index)"></td>
+            </tr>
+        </table>
+
+        <form>
+            id:<input type="text" v-model="user.id" /><br>
+            name:<input type="text" v-model="user.name" /><br>
+            age:<input type="text" v-model="user.age" /><br>
+            subject:<input type="text" v-model="user.subject" /><br>
+            <input type="button" value="添加" @click="addUser">
+        </form>
+    </div>
+
+    <script>
+        new Vue({
+                "el":"#app",
+                "data":{
+                    "user":{},
+                    "users":[
+                    {"id":101,"name":"jack","age":20,"subject":"java"},
+                    {"id":102,"name":"rose","age":22,"subject":"大数据"}
+                    ]
+                },
+                "methods":{
+            "addUser":function(){
+<!--                     alert(111)-->
+                        //将对象添加到数组内
+                        this.users.push(this.user);
+                        //将对象清空
+                        this.user={}
+                     },
+            "deleteUser":function(i){
+                this.users.splice(i,1);
+        }
+}
+        })
+    </script>
+</body>
+</html>

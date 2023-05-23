@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f() {
+            var username = document.getElementById("username").value;
+            if(username==""){
+                //取消表单的提交
+                event.preventDefault();//取消默认行为
+            }
+        }
+        function f1() {
+            alert("f1函数");
+            event.preventDefault()
+        }
+    </script>
+</head>
+<body>
+    <form action="../homework/01_table.html" method="get" onsubmit="f()">
+        username:<input type="text" id="username"/><br/>
+        password:<input type="text"/><br/>
+        <input type="submit"/>
+    </form>
+    <a href="../homework/01_table.html" onclick="f1()">table</a>
+</body>
+</html>

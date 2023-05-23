@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BookStore01/BookStore01.iml" filepath="$PROJECT_DIR$/BookStore01/BookStore01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWeb.iml" filepath="$PROJECT_DIR$/JavaWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day01_HTML_CSS/day01_HTML_CSS.iml" filepath="$PROJECT_DIR$/day01_HTML_CSS/day01_HTML_CSS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day02_javascript/day02_javascript.iml" filepath="$PROJECT_DIR$/day02_javascript/day02_javascript.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day03_vue/day03_vue.iml" filepath="$PROJECT_DIR$/day03_vue/day03_vue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day04_vue/day04_vue.iml" filepath="$PROJECT_DIR$/day04_vue/day04_vue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day04_xml/day04_xml.iml" filepath="$PROJECT_DIR$/day04_xml/day04_xml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day05_note/day05_note.iml" filepath="$PROJECT_DIR$/day05_note/day05_note.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day05_tomcat/day05_tomcat.iml" filepath="$PROJECT_DIR$/day05_tomcat/day05_tomcat.iml" />
+    </modules>
+  </component>
+</project>

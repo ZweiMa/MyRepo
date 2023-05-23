@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="01_HelloWorld.html">
+<!--        如果没有name属性的表单，是无法提交数据的，要求所有表单项都具备name属性-->
+        <!--文本框-->
+        username:<input type="text" value="atguigu" name="username"/><br/>
+        <!--密码框-->
+        password:<input type="password" name="password"/><br/>
+        <!--单选按钮-->
+        gender:<input type="radio" name="abc" value="男"/> 男
+            <input type="radio" name="abc" checked value="女"/>女<br/>
+            <!--            abc=男/女-->
+        <!--多选按钮  checkbox -->
+        hobby: <input type="checkbox" checked name="hobby" value="java"/> java
+                <input type="checkbox"  name="hobby" value="mysql"/> mysql
+                <input type="checkbox" checked  name="hobby" value="python"/> python
+                <input type="checkbox" name="hobby" value="oracle"/> oracle<br/>
+        <!--附件 -->
+        file:<input type="file" name="file"/><br/>
+        <!-- 隐藏域-->
+        hidden：<input type="hidden" name="key" value="keyValue"/><br/>
+        <!--下拉表单-->
+        address:
+        <select name="address">
+            <option value="beijing">北京</option>
+            <option value="shanghai">上海</option>
+            <option selected="selected">广东省</option>
+            <option>湖北省</option>
+        </select>省
+        <select>
+            <option>昌平区</option>
+            <option>海淀区</option>
+            <option selected>松江区</option>
+            <option>浦东新区</option>
+        </select>市<br/>
+        简介：<textarea name="comment">这个位置是默认值</textarea>
+        <br/>
+        <input type="button" value="普通按钮"/>
+        <input type="submit" value="登录"/>
+        <input type="reset" value="重置按钮"/>
+
+
+    </form>
+</body>
+</html>

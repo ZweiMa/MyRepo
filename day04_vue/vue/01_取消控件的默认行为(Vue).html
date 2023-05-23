@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+    <body>
+            <div id="app">
+                <form action="../homework/01_table.html" method="get" @submit.prevent="f">
+                    username:<input type="text" id="username"/><br/>
+                    password:<input type="text"/><br/>
+                    <input type="submit"/>
+                </form>
+                <a href="../homework/01_table.html" onclick="f1()">table</a>
+            </div>
+
+        <script>
+            new Vue({
+                "el":"#app",
+                "data":{},
+                "methods":{
+                    f(){
+                    alert("f函数");
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

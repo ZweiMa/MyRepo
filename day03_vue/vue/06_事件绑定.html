@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="按钮" v-on:click="fun02">
+    <input type="text"  v-on:change="fun01">
+</div>
+<script>
+    new Vue({
+
+        el: '#app',
+        data:{
+    },
+        methods:{
+            "fun01":function(){
+        console.log("fun01函数被触发");
+            },
+
+            fun02(){
+            console.log("fun02被触发")
+            }
+    }
+
+    })
+</script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function checkUsername () {
+<!--            alert("100")-->
+        //1.获取用户名
+        var username = document.getElementById("用户").value;
+        var regex = /^[a-zA-Z0-9]{6}$/
+        //2.验证
+        var usernameMsg = document.getElementById("usernameMsg")
+        if(regex.test(username)){
+        //说明是合格的
+        usernameMsg.innerText ="用户名格式正确"
+        return true
+        }else{
+        //说明是不合格的
+        usernameMsg.innerText ="用户名格式不正确！ "
+        return false
+        }
+    }
+
+
+        function checkPassword(){
+        //1.获取用户名
+        var password= document.getElementById("密码").value
+        var regex = /^[a-zA-Z0-9_]{8,}$/
+
+        //2.验证
+        var passwordMsg = document.getElementById("passwordMsg")
+        if(regex.test(password)){
+        passwordMsg.innerText ="✅"
+        return true;
+        }else{
+        passwordMsg.innerText ="密码格式不正确！"
+        return false;
+        }
+
+    }
+
+
+        function checkRegister(){
+        if(checkUsername()&checkPassword()){
+             alert("表单提交");
+        }else{
+                alert("表单有错误,阻止提交");
+        }
+    }
+
+    </script>
+</head>
+<body>
+<form>
+    用户:<input type="text" id="用户" onblur="checkUsername()"/> <span id="usernameMsg">请输入用户名</span><br/>
+    密码:<input type="password" id="密码" onblur="checkPassword()"/> <span id="passwordMsg">请输入密码</span><br/>
+    确认密码:<input type="password" id="确认密码" /> <span>请确认密码</span><br/>
+    邮箱:<input type="text" id="邮箱" /> <span>请输入邮箱</span><br/>
+    <input type="button" value="注册" onclick="checkRegister()">
+
+</form>
+</body>
+</html>

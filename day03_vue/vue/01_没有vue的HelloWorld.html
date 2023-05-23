@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function getValue(){
+        var div1 = document.getElementById("div1")
+        var text = div1.innerHTML
+        console.log(text)
+    }
+
+        function setValue(){
+        var div1 = document.getElementById("div1")
+        div1.innerHTML= "设置新值"
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">这是div的标签体</div>
+    <input type="button" value="获取标签中的内容" onclick="getValue()">
+    <input type="button" value="设置标签中的内容" onclick="setValue()">
+</body>
+</html>

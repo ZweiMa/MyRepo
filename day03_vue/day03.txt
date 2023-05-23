@@ -1,0 +1,134 @@
+1. 正则表达式
+    1.1 创建正则表达式
+        直接量形式：var reg = /正则表达式/一般使用这种声明方式
+        案例：
+            var reg=/^[a-zA-Z0-9_]{5,10}$/;
+    1.2 如何使用
+        正则表达式对象.test(字符串)
+        案例：
+            var flag=reg.test(username);
+    1.3 常用的正则表达式
+        见课件
+2. 练习
+    创建一个注册的页面(用户名、密码、确认密码、邮箱)
+    当每个表单输完之后，就立刻给提示，
+    点击注册按钮的时候，给出相应的提示。
+
+3. vue
+    3.1 准备好vue的框架(xxx.js)
+    3.2 vue的HelloWorld
+        a. 将vue.js引入到网页内
+        b. 需要设置一个区域(vue只对这个区域内有效)
+        c. 在这个区域下方，创建script标签
+        d. 在标签内创建一个Vue对象
+        e. 为对象传递实参
+            {
+                "el":"#app",//el是element的缩写，#app是id选择器，选择Vue对象操作的范围
+                "data":{//设置数据模型，key和value值都是自定义的
+                            "msg":"这是div中的标签体",
+                            "aaa":"bbb",
+                            "ccc":"ddd",
+                        }
+            }
+        f. 绑定
+            通过插值表达式 {{key值}}
+            {{msg}}
+    3.3 声明式渲染
+        Vue是前端的渲染框架
+        Thymeleaf是服务器端的渲染框架
+    3.4 绑定标签的标签体内容(双标签)
+        <div></div>
+        ...
+        插值表达式：{{数据模型的key值}}
+        案例：<div>{{msg}}</div>
+    3.5 单向绑定元素属性(所有有属性标签)
+        语法：v-bind:属性名="数据模型的key值"
+            案例：<input type="text" v-bind:value="msg"/>
+        简写：:属性名="数据模型的key值"
+             案例：<input type="text" :value="msg"/>
+        问题：单向绑定
+            修改数据模型的值，页面上的是会同步
+            对于用户可以修改的元素来说，用户对内容修改不会对Vue中的数据模型同步
+    3.6 双向绑定元素属性(用户可以修改的元素)
+        语法：v-model:属性名="数据模型的key值"
+            案例：<input type="text" v-model:value="msg"/>
+        简写： v-model="数据模型的key值"
+        小知识：
+            v-model.trim="数据模型的key值"
+            功能：默认去前后空格
+            案例：<input type="text" v-model.trim="msg"/>
+    3.7 条件渲染
+        功能：控制元素的显示与否
+        ① v-if="数据模型的key值"
+            <div v-if="flag">这是div1</div>
+            说明：flag的值是true元素显示，反之不显示(直接删除)
+        ② v-if="数据模型的key值" + v-else="数据模型的key值"
+            <div v-if="flag">这是div1</div>
+             <div v-else="flag">这是div2</div>
+             说明：flag的值是true,div1显示,反之div2显示
+             注意：v-else不能单独使用
+                  v-if和v-else中间不能有其他标签
+        ③ v-show="数据模型的key值"
+            <div v-show="flag">这是div1</div>
+            说明：flag的值是true元素显示，反之不显示(通过样式隐藏)
+    3.8 列表渲染
+        语法：v-for="对象名 in 数组"
+        注意：
+            a. 循环哪个标签就在那个标签上加v-for
+            b. 对象名是自定义的
+            c. in是关键字，数组是vue中的数据模型
+            d. 如果需要本次循环的索引，在对象名后添加index
+                v-for="(对象名,index) in 数组"
+        案例：
+            HTML代码：
+            <ul>
+                <li v-for="abc in names">{{abc}}</li>
+            </ul>
+
+            <tr v-for="(user,index) in users">
+                <td>{{index+1}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+            </tr>
+
+            Vue代码：
+                "data":{
+                    "names":["java","mysql","oracle","c"],
+                    "users":[
+                        {
+                            "id":"101",
+                            "name":"jack",
+                            "age":"20"
+                        },{
+                            "id":"254",
+                            "name":"tom",
+                            "age":"21"
+                        },{
+                            "id":"567",
+                            "name":"rose",
+                            "age":"22"
+                        }
+                    ]
+                }
+    3.9 事件绑定
+        a. 函数如何声明
+            el和data后添加一个methods:{函数列表}
+            函数语法："函数名":function(){}
+            案例：
+                "fun01":function () {
+                    console.log("fun01函数被触发")
+                }
+            简写：
+                函数名(){}
+        b. 事件绑定
+            v-on:事件的类型="fun01"
+            案例：
+                <input type="button" value="button" v-on:click="fun01(1,3,'abc')">
+            注意：如果没有参数传递，小括号可以省略
+            简写：@事件类型="函数名"
+            案例：
+                <input type="button" value="button" @click="fun01(1,3,'abc')">
+
+        c. 取消控件的默认行为
+        d. 取消事件冒泡

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>尚硅谷会员注册页面</title>
+    <link type="text/css" rel="stylesheet" href="../../static/css/style.css" />
+    <link rel="stylesheet" href="../../static/css/register.css" />
+    <style type="text/css">
+      .login_form {
+        height: 420px;
+        margin-top: 25px;
+      }
+    </style>
+    <script src="../../static/script/vue.js"></script>
+  </head>
+  <body>
+  <div id="app">
+    <div id="login_header">
+      <a href="../../index.html">
+        <img class="logo_img" alt="" src="../../static/img/logo.gif" />
+      </a>
+    </div>
+
+    <div class="login_banner">
+      <div class="register_form">
+        <h1>注册尚硅谷会员</h1>
+        <form action="regist_success.html" @submit="checkAll">
+          <div class="form-item">
+            <div>
+              <label>用户名称:</label>
+              <input type="text" placeholder="请输入用户名" v-model="username" @blur="checkUsername"/>
+            </div>
+            <span class="errMess" :style="usernameCss">{{usernameErrMsg}}</span>
+          </div>
+          <div class="form-item">
+            <div>
+              <label>用户密码:</label>
+              <input type="password" placeholder="请输入密码" v-model="password" @blur="checkPassword"/>
+            </div>
+            <span class="errMess" :style="passwordCss">{{passwordErrMsg}}</span>
+          </div>
+          <div class="form-item">
+            <div>
+              <label>确认密码:</label>
+              <input type="password" placeholder="请输入确认密码" v-model="confirmPassword" @blur="checkConfirmPassword"/>
+            </div>
+            <span class="errMess" :style="confirmPasswordCss">{{confirmPasswordErrMsg}}</span>
+          </div>
+          <div class="form-item">
+            <div>
+              <label>用户邮箱:</label>
+              <input type="text" placeholder="请输入邮箱" v-model="email" @blur="checkEmail"/>
+            </div>
+            <span class="errMess" :style="emailCss">{{emailErrMsg}}</span>
+          </div>
+          <div class="form-item">
+            <div>
+              <label>验证码:</label>
+              <div class="verify">
+                <input type="text" placeholder="" />
+                <img src="../../static/img/code.bmp" alt="" />
+              </div>
+            </div>
+            <span class="errMess"></span>
+          </div>
+          <button class="btn">注册</button>
+        </form>
+      </div>
+    </div>
+    <div id="bottom">
+      <span>
+        尚硅谷书城.Copyright &copy;2015
+      </span>
+    </div>
+  </div>
+  <script>
+    new Vue({
+      "el":"#app",
+      "data":{
+        "username":"",
+        "usernameErrMsg":"用户名应为6~16位数组和字母组成",
+        "usernameCss":{"visibility":"hidden"},
+        "password":"",
+        "passwordErrMsg":"密码的长度至少为8位",
+        "passwordCss":{"visibility":"hidden"},
+        "confirmPassword":"",
+        "confirmPasswordErrMsg":"密码两次输入不一致",
+        "confirmPasswordCss":{"visibility":"hidden"},
+        "email":"",
+        "emailErrMsg":"请输入正确的邮箱格式",
+        "emailCss":{"visibility":"hidden"},
+      },
+      "methods":{
+        checkUsername(){
+          this.usernameCss={"visibility":"visible"}
+          var reg=/^[a-zA-Z0-9]{6,16}$/;
+          if(reg.test(this.username)){
+            this.usernameErrMsg="√";
+            return true;
+          }else{
+            this.usernameErrMsg="用户名应为6~16位数组和字母组成"
+            return false;
+          }
+        },
+        checkPassword(){
+          this.passwordCss={"visibility":"visible"};
+          var reg=/^[a-zA-Z0-9]{8,}$/;
+          if(reg.test(this.password)){
+            this.passwordErrMsg="√";
+            return true;
+          }else{
+            this.passwordErrMsg="密码的长度至少为8位";
+            return false;
+          }
+        },
+        checkConfirmPassword(){
+          this.confirmPasswordCss={"visibility":"visible"};
+          if(this.confirmPassword==""){
+            this.confirmPasswordErrMsg="密码两次输入不一致";
+            return false;
+          }
+          if(this.password==this.confirmPassword){
+            this.confirmPasswordErrMsg="√";
+            return true;
+          }else{
+            this.confirmPasswordErrMsg="密码两次输入不一致";
+            return false;
+          }
+        },
+        checkEmail(){
+          this.emailCss={"visibility":"visible"};
+          var reg=/^[a-zA-Z0-9_\.-]+@([a-zA-Z0-9-]+[\.]{1})+[a-zA-Z]+$/;
+          if(reg.test(this.email)){
+            this.emailErrMsg="√"
+            return true;
+          }else{
+            this.emailErrMsg="请输入正确的邮箱格式"
+            return false;
+          }
+        },
+        checkAll(){
+          if(!(this.checkUsername()&this.checkPassword()&this.checkConfirmPassword()&this.checkEmail())){
+            event.preventDefault()
+          }
+        }
+      }
+    })
+  </script>
+  </body>
+</html>

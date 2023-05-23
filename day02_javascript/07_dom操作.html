@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var ele=document.getElementById("btn01");
+            ele.onclick=function () {
+                //Todo 根据元素的id属性值找元素对象(Element对象)
+                /*var username = document.getElementById("username");
+                console.log(username);
+                console.log(username.value);
+                var eles = document.getElementsByName("aaa");
+                console.log(eles);
+                var elementsByClassName = document.getElementsByClassName("bbb");
+                console.log(elementsByClassName)
+                var elementsByTagName = document.getElementsByTagName("input");
+                console.log(elementsByTagName)*/
+
+                /*var div = document.getElementById("div1");
+                var childrens = div.children;
+                console.log(childrens)
+                var firstElementChild = div.firstElementChild;
+                console.log(firstElementChild)
+                var lastElementChild = div.lastElementChild;
+                console.log(lastElementChild)*/
+
+
+                /*var elementById = document.getElementById("username");
+                var parentElement = elementById.parentElement;
+                console.log(parentElement)*/
+
+                /*var elementById = document.getElementById("password");
+                var previousElementSibling = elementById.previousElementSibling;
+                console.log(previousElementSibling)
+                var nextElementSibling = elementById.nextElementSibling;
+                console.log(nextElementSibling)*/
+
+               /* var elementById = document.getElementById("username");
+                var value = elementById.value;
+                console.log(value)
+                var name = elementById.name;
+                console.log(name)
+                //给username的value属性赋值
+                elementById.value="atguigu";
+                elementById.name="ccc"*/
+
+               var elementById = document.getElementById("span1");
+               /*var innerText = elementById.innerText;
+                console.log(innerText)
+                var innerHTML = elementById.innerHTML;
+                console.log(innerHTML)*/
+               elementById.innerHTML="<i>这是新值</i>"
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <span id="span1"><i>标签体的内容</i></span>
+        <input type="text" id="username" name="aaa" class="bbb"/>
+        <input type="text" id="password" name="aaa"/>
+        <input type="text" class="bbb"/>
+        <br/>
+    </div>
+    <input type="text" /><br/>
+    <input type="button" value="按钮" id="btn01"/>
+
+</body>
+</html>

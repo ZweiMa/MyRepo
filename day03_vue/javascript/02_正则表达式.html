@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f() {
+        //1. 定义正则表达式
+<!--        var reg=/^[a-zA-Z0-9_]{5,10}$/;-->
+<!--        var username="adMi3sdfgh";-->
+<!--        var flag=reg.test(username);-->
+<!--        console.log(flag)-->
+
+        var reg = /^[a-zA-Z0-9]{5,10}$/
+        var username = "adMIn56"
+        var flag = reg.test(username)
+        console.log(flag)
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="button" onclick="f()">
+</body>
+</html>

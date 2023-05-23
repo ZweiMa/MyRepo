@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function addUser(){
+        /**
+        添加用户：
+        ①获取用户输入的数据
+        ②将数据添加到表格中
+        ③删除表单中的数据
+        */
+
+
+        //a. 获得用户输入的数据
+        var id=document.getElementById("id");
+        var username=document.getElementById("username");
+        var gender=document.getElementById("gender");
+        //b. 获得表格对象
+        var users=document.getElementById("users");
+        //c. 新建一个tr  （行）
+        var tr=document.createElement("tr");
+        //d. 新建四个td,将用户输入的数据存在td内，将td追加到tr内  （列）
+        var td1=document.createElement("td");
+        td1.innerText=id.value;
+        tr.appendChild(td1);
+
+        var td2=document.createElement("td");
+        td2.innerText=username.value;
+        tr.appendChild(td2);
+
+        var td3=document.createElement("td");
+        td3.innerText=gender.value;
+        tr.appendChild(td3);
+
+        var td4=document.createElement("td");
+        td4.innerHTML="<input type='button' value='删除' onclick='deleteUser()'>"
+        tr.appendChild(td4);
+
+        //e. 将tr追加到table内
+        users.appendChild(tr);
+        //f. 将表单清空
+        id.value="";
+        username.value="";
+        gender.value="";
+
+        }
+
+        function deleteUser() {
+        //当前事件
+        event.target.parentElement.remove
+
+        }
+</script>
+</head>
+
+<body>
+<table border="1" width="500px" id="users">
+    <tr>
+        <th>序号</th>
+        <th>用户名</th>
+        <th>性别</th>
+        <th>操作</th>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>张三</td>
+        <td>男</td>
+        <td>
+            <input type="button" value="删除" onclick="deleteUser()">
+        </td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>李四</td>
+        <td>女</td>
+        <td>
+            <input type="button" value="删除" onclick="deleteUser()">
+        </td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td>王五</td>
+        <td>男</td>
+        <td>
+            <input type="button" value="删除" onclick="deleteUser()">
+        </td>
+    </tr>
+    </table>
+
+<form>
+    id:<input type="text" id="id"/><br/>
+    username:<input type="text" id="username"/><br/>
+    gender:<input type="text" id="gender"/><br>
+<input type="button" value="添加" onclick="addUser() "/>
+</form>
+</body>
+</html>
